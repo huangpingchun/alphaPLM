@@ -7,6 +7,7 @@
 #include <mutex>
 #include <iostream>
 #include <cmath>
+#include <boost/lexical_cast.hpp>
 #include "../Utils/utils.h"
 
 using namespace std;
@@ -55,12 +56,12 @@ public:
         w_z.resize(piece_num);
         for(int f = 0; f < piece_num; ++f)
         {
-            u[f] = stod(modelLineSeg[1 + f]);
-            w[f] = stod(modelLineSeg[piece_num + 1 + f]);
-            u_n[f] = stod(modelLineSeg[2 * piece_num + 1 + f]);
-            w_n[f] = stod(modelLineSeg[3 * piece_num + 1 + f]);
-            u_z[f] = stod(modelLineSeg[4 * piece_num + 1 + f]);
-            w_z[f] = stod(modelLineSeg[5 * piece_num + 1 + f]);
+            u[f] = boost::lexical_cast<double>(modelLineSeg[1 + f]);
+            w[f] = boost::lexical_cast<double>(modelLineSeg[piece_num + 1 + f]);
+            u_n[f] = boost::lexical_cast<double>(modelLineSeg[2 * piece_num + 1 + f]);
+            w_n[f] = boost::lexical_cast<double>(modelLineSeg[3 * piece_num + 1 + f]);
+            u_z[f] = boost::lexical_cast<double>(modelLineSeg[4 * piece_num + 1 + f]);
+            w_z[f] = boost::lexical_cast<double>(modelLineSeg[5 * piece_num + 1 + f]);
         }
     }
 
